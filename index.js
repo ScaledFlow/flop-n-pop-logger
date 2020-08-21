@@ -17,13 +17,20 @@ price.getCryptoPrice("USD", "ETH").then(obj => { // Base for ex - USD, Crypto fo
   console.log(err)
 })
 
-// // Initialize Finnhub
+// Initialize Finnhub
 const api_key = finnhub.ApiClient.instance.authentications["api_key"];
 api_key.apiKey = "bt01m7n48v6ouqftkos0"; // Replace this
 const finnhubClient = new finnhub.DefaultApi();
 
-
-request('https://finnhub.io/api/v1/stock/candle?symbol=AAPL&resolution=1&from=1572651390&to=1572910590&token=brvkn6nrh5rd378r3l5g', { json: true }, (err, res, body) => {
+// Stock Price
+request('https://finnhub.io/api/v1/stock/candle?symbol=TSLA&resolution=1&from=1572651390&to=1572910590&token=bt01m7n48v6ouqftkos0', { json: true }, (err, res, body) => {
   if (err) { return console.log(err); }
   console.log(body);
 });
+
+// Covid Data
+request('https://finnhub.io/api/v1/covid19/us?token=bt01m7n48v6ouqftkos0', { json: true }, (err, res, body) => {
+  if (err) { return console.log(err); }
+  console.log(body);
+});
+
