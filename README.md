@@ -23,12 +23,14 @@
 ## Technologies
 
 - Site uses Javascript, Node.js, Finnhub API, Crpyto API, MongoDB and MySQL.
+- Finnhub - https://finnhub.io
+- Crypto-Price - https://www.npmjs.com/package/crypto-price
 
 ## Setup
-Ref - https://finnhub.io/
-- npm install finnhub --save
 
-Ref - https://www.npmjs.com/package/crypto-price
+- npm install
+
+- npm install finnhub --save
 - npm install request --save
 - npm install crypto-price --save
 
