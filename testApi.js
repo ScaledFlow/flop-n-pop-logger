@@ -71,6 +71,13 @@ request('https://finnhub.io/api/v1/calendar/economic?token=bt01m7n48v6ouqftkos0'
   // console.log(body.economicCalendar[0].country);
 });
 
+// Company News
+request('https://finnhub.io/api/v1/company-news?symbol=TSLA&from=2020-04-30&to=2020-05-01&token=bt01m7n48v6ouqftkos0', { json: true }, (err, res, body) => {
+  if (err) { return console.log(err); }
+  console.log(body[0]);
+});
+
+
 
 // Covid Data
 request('https://finnhub.io/api/v1/covid19/us?token=bt01m7n48v6ouqftkos0', { json: true }, (err, res, body) => {
