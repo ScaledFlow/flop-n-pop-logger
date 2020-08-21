@@ -58,6 +58,20 @@ request('https://finnhub.io/api/v1/scan/technical-indicator?symbol=TSLA&resoluti
   console.log(body);
 });
 
+// Earnings Call - only available with Premium
+request('https://finnhub.io/api/v1/stock/transcripts/list?symbol=TSLA&token=bt01m7n48v6ouqftkos0', { json: true }, (err, res, body) => {
+  if (err) { return console.log(err); }
+  // console.log(body);
+});
+
+// Economic Calendar
+request('https://finnhub.io/api/v1/calendar/economic?token=bt01m7n48v6ouqftkos0', { json: true }, (err, res, body) => {
+  if (err) { return console.log(err); }
+  console.log(body.economicCalendar);
+  // console.log(body.economicCalendar[0].country);
+});
+
+
 // Covid Data
 request('https://finnhub.io/api/v1/covid19/us?token=bt01m7n48v6ouqftkos0', { json: true }, (err, res, body) => {
  if (err) { return console.log(err); }
