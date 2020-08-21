@@ -52,6 +52,12 @@ request('https://finnhub.io/api/v1/scan/pattern?symbol=TSLA&resolution=D&token=b
   console.log(body.points[0].atime);
 });
 
+// MACD
+request('https://finnhub.io/api/v1/scan/technical-indicator?symbol=TSLA&resolution=D&token=bt01m7n48v6ouqftkos0', { json: true }, (err, res, body) => {
+  if (err) { return console.log(err); }
+  console.log(body);
+});
+
 // Covid Data
 request('https://finnhub.io/api/v1/covid19/us?token=bt01m7n48v6ouqftkos0', { json: true }, (err, res, body) => {
  if (err) { return console.log(err); }
@@ -59,7 +65,6 @@ request('https://finnhub.io/api/v1/covid19/us?token=bt01m7n48v6ouqftkos0', { jso
 });
 
 // Convert Unix Time Stamp
-
 let unix_timestamp = 1595462400
 // Create a new JavaScript Date object based on the timestamp
 // multiplied by 1000 so that the argument is in milliseconds, not seconds.
